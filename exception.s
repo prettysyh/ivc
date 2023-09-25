@@ -8,7 +8,7 @@
 .global arm_vector_table
 arm_vector_table:
     ventry  cur_el_sync                     // Synchronous EL1t/EL2t
-    ventry  invalid_vector_entry           // IRQ EL1t/EL2t
+    ventry  cur_irq_handler           // IRQ EL1t/EL2t
     ventry  invalid_vector_entry           // FIQ EL1t/EL2t
     ventry  invalid_vector_entry           // SError EL1t/EL2t
 
@@ -22,8 +22,8 @@ arm_vector_table:
     ventry  invalid_vector_entry           // FIQ 64-bit EL0/EL1
     ventry  invalid_vector_entry                  // SError 64-bit EL0/EL1
 
-    ventry  invalid_vector_entry           // Synchronous 32-bit EL0/EL1
-    ventry  invalid_vector_entry           // IRQ 32-bit EL0/EL1
+    ventry  lower_el_sync           // Synchronous 32-bit EL0/EL1
+    ventry  cur_irq_handler           // IRQ 32-bit EL0/EL1
     ventry  invalid_vector_entry           // FIQ 32-bit EL0/EL1
     ventry  invalid_vector_entry           // SError 32-bit EL0/EL1
 

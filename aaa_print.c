@@ -3,10 +3,6 @@ volatile unsigned int * const ULSR = (unsigned int *)0xc280014;//offset 14
 #define UTHR 0x00 /* UART Transmit Holding Register */
 #define ULSR_THRE (1 << 5) /* Transmit Holding Register Empty */
 
-void print_c(const char s) {
-	*UART0DR = (unsigned int)s;
-}
-
 void print_char(const char *s) {
     while(*s != '\0') { /* Loop until end of string */
 		while ((*ULSR & ULSR_THRE) == 0);

@@ -51,8 +51,10 @@ static void tegra_hsp_sm_enable(unsigned setbit)
 {
 	uint32_t ie;
 
-	ie = tegra_hsp_si_readl(0);
-	tegra_hsp_si_writel(0, ie | BIT(setbit));
+	for (int i = 1; i < 5; i ++ ) {
+		ie = tegra_hsp_si_readl(i);
+		tegra_hsp_si_writel(i, ie | BIT(setbit));
+	}
 }
 
 void tegra_hsp_sm_full_enable(uint32_t sm)

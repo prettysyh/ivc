@@ -5,4 +5,4 @@ aarch64-linux-gnu-objcopy -O binary test.elf test.bin
 
 mkimage -A arm64  -C none -T kernel -a 0x80100000 -e 0x80100000 -d test.bin uImage
 
-scp uImage syh@192.168.199.145:/home/syh/boot-image
+scp uImage syh@192.168.2.80:/home/syh/boot-image
