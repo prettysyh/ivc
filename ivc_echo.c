@@ -240,7 +240,7 @@ void ivc_echo() {
 	ivc_wmb();
     // print_char("tegra_hsp_sm_writel2\r\n");
     ivc_notify_remote();
-	set_timer(3000);
+	// set_timer(3000);
     // print_char("msg_tx...\r\n");
 	
 	// print_char("====================================================\r\n");
