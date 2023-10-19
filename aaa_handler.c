@@ -66,6 +66,7 @@ void irq_hal_c()
     if(temp<32)
     {
         set_timer(3000);
+        print_char("msg tx\r\n");
         msg_tx();
         ivc_notify_remote();
     }
